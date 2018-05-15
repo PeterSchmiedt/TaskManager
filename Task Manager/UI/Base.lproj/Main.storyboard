@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -69,10 +70,36 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="lKF-iH-2pj" kind="relationship" relationship="rootViewController" id="mKa-8O-WF4"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cn-He-iMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="692"/>
+        </scene>
+        <!--Add/Edit Task-->
+        <scene sceneID="duQ-xS-P1f">
+            <objects>
+                <viewController id="lKF-iH-2pj" customClass="TaskUpdateViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Jv-Vu-o6U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dT5-qu-Xkr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add/Edit Task" id="CIi-fX-CVb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FLq-Gh-yXd">
+                            <connections>
+                                <action selector="cancelAction:" destination="lKF-iH-2pj" id="w6X-J0-68B"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="kdL-3e-sd4"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyk-l4-16y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="692"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LMh-gO-wpF">
