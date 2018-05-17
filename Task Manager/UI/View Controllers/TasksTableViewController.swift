@@ -74,7 +74,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+     */
 
     /*
     // Override to support editing the table view.
@@ -113,7 +113,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     }
     */
     
-    // MARK: NSFetchedResultsController
+    // MARK: - NSFetchedResultsController
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }

@@ -50,7 +50,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="7VR-qV-Bxf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="MOQ-Al-Rd7"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="NavigationBarSettings" id="MOQ-Al-Rd7"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rdA-Hw-pMX">
                             <connections>
                                 <segue destination="BL8-Ha-jBr" kind="presentation" id="RvK-cU-HLi"/>
@@ -76,7 +76,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cn-He-iMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="692"/>
+            <point key="canvasLocation" x="2169" y="1162"/>
         </scene>
         <!--Add/Edit Task-->
         <scene sceneID="duQ-xS-P1f">
@@ -94,12 +94,16 @@
                                 <action selector="cancelAction:" destination="lKF-iH-2pj" id="w6X-J0-68B"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="kdL-3e-sd4"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="kdL-3e-sd4">
+                            <connections>
+                                <action selector="save:" destination="lKF-iH-2pj" id="gZC-6d-w0n"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyk-l4-16y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="692"/>
+            <point key="canvasLocation" x="3212" y="692"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LMh-gO-wpF">
@@ -120,4 +124,7 @@
             <point key="canvasLocation" x="245.59999999999999" y="692.20389805097454"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NavigationBarSettings" width="25" height="25"/>
+    </resources>
 </document>
