@@ -28,6 +28,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         return fetchedResultsController
     }()
     
+    
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +66,11 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identifier, for: indexPath) as? TaskCell else { return UITableViewCell() }
 
         // Set up the cell
         let task = self.fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = task.name
-        cell.detailTextLabel?.text = String(describing: task.date)
+        cell.setupCell(task: task)
         
         return cell
     }
@@ -106,6 +106,21 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
             present(editTaskNavigationViewController, animated: true, completion: nil)
         }
     }
+    
+    //MARK: - Cell Actions
+    @IBAction func taskSwitchFlip(_ sender: UISwitch) {
+        let point = sender.convert(CGPoint.zero, to:tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        let switchedTask = fetchedResultsController.object(at: indexPath!)
+        switchedTask.isDone = sender.isOn
+        
+        do {
+            try fetchedResultsController.managedObjectContext.save()
+        } catch {
+            fatalError("Could not delete task")
+        }
+    }
+    
     
     // MARK: - NSFetchedResultsController
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

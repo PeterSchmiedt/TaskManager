@@ -17,6 +17,8 @@
 		E1440B1420AB24D3000C7817 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B1320AB24D3000C7817 /* Category.swift */; };
 		E1440B1C20AB45AB000C7817 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B1B20AB45AB000C7817 /* TasksTableViewController.swift */; };
 		E1440B1E20AB5276000C7817 /* TaskUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */; };
+		E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2120B20676000C7817 /* SettingsViewController.swift */; };
+		E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2520B221D3000C7817 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		E1440B1320AB24D3000C7817 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E1440B1B20AB45AB000C7817 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUpdateViewController.swift; sourceTree = "<group>"; };
+		E1440B2120B20676000C7817 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E1440B2520B221D3000C7817 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		F2C7F8B0E04C1338175E1113 /* Pods-Task Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E1440B1920AB453B000C7817 /* UI */,
+				E1440B1A20AB458D000C7817 /* View Controllers */,
 				E1440B0F20AB2459000C7817 /* Model */,
 				E1440AFA20A9F8B6000C7817 /* AppDelegate.swift */,
 				E1440B0920A9F8B7000C7817 /* Info.plist */,
@@ -110,7 +115,7 @@
 				E1440B0420A9F8B7000C7817 /* Assets.xcassets */,
 				E1440B0620A9F8B7000C7817 /* LaunchScreen.storyboard */,
 				E1440AFE20A9F8B6000C7817 /* Main.storyboard */,
-				E1440B1A20AB458D000C7817 /* View Controllers */,
+				E1440B2320B2217D000C7817 /* Collection VIew Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -120,8 +125,17 @@
 			children = (
 				E1440B1B20AB45AB000C7817 /* TasksTableViewController.swift */,
 				E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */,
+				E1440B2120B20676000C7817 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E1440B2320B2217D000C7817 /* Collection VIew Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E1440B2520B221D3000C7817 /* TaskCell.swift */,
+			);
+			path = "Collection VIew Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +268,9 @@
 			files = (
 				E1440B1220AB24AA000C7817 /* Task.swift in Sources */,
 				E1440B1C20AB45AB000C7817 /* TasksTableViewController.swift in Sources */,
+				E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */,
 				E1440B1420AB24D3000C7817 /* Category.swift in Sources */,
+				E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */,
 				E1440AFB20A9F8B6000C7817 /* AppDelegate.swift in Sources */,
 				E1440B1E20AB5276000C7817 /* TaskUpdateViewController.swift in Sources */,
 				E1440B0320A9F8B6000C7817 /* Task_Manager.xcdatamodeld in Sources */,
