@@ -12,8 +12,8 @@ import CoreData
 
 class Category: NSManagedObject {
     
-    @NSManaged var id: Int
     @NSManaged var name: String
-    @NSManaged var color: Data
+    @NSManaged var color: UIColor
     
+    @NSManaged var tasks: [Task]
 }

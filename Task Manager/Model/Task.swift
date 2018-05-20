@@ -11,7 +11,6 @@ import CoreData
 
 class Task: NSManagedObject {
     
-    @NSManaged var id: Int
     @NSManaged var name: String
     @NSManaged var date: Date
     @NSManaged var desc: String?

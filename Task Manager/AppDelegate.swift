@@ -17,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //seed the 4 default categories
+        
+        let moc = self.persistentContainer.viewContext
+        let categoryFetch = NSFetchRequest<Category>(entityName: "Category")
+        do {
+            let categories = try moc.fetch(categoryFetch)
+            if categories.count == 0 {
+                seedData()
+            }
+        } catch {
+            fatalError("Failed to fetch categories: \(error)")
+        }
+        
+        
+        
         return true
     }
 
@@ -76,10 +92,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+        let moc = persistentContainer.viewContext
+        if moc.hasChanges {
             do {
-                try context.save()
+                try moc.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -88,6 +104,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    //MARK: - Core Data Seed
+    func seedCategoryData(name: String, color: UIColor) {
+        let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: persistentContainer.viewContext) as! Category
+        category.name = name
+        category.color = color
+    }
+    
+    func seedData() {
+        seedCategoryData(name: "Important", color: UIColor.red)
+        seedCategoryData(name: "School", color: UIColor.blue)
+        seedCategoryData(name: "Work", color: UIColor.green)
+        seedCategoryData(name: "TODO", color: UIColor.orange)
+        
+        saveContext()
+    }
 
 }
-
