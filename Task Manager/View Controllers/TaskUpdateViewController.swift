@@ -168,6 +168,8 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             fatalError("Can't save task.")
         }
         
+        //TODO: reload the table data if the task completion changes
+        
         dismiss(animated: true, completion: nil)
     }
     

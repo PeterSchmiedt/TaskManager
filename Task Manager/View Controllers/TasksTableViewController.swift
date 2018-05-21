@@ -117,7 +117,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         do {
             try fetchedResultsController.managedObjectContext.save()
         } catch {
-            fatalError("Could not delete task")
+            fatalError("Could not switch task completion")
         }
     }
     

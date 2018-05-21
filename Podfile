@@ -8,5 +8,7 @@ target 'Task Manager' do
 
   # Pods for Task Manager
   pod 'Eureka'
+  pod 'ColorPickerRow', :git => 'https://github.com/EurekaCommunity/ColorPickerRow'
+  pod 'UIColor_Hex_Swift'
 
 end

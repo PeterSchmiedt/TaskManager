@@ -19,6 +19,10 @@
 		E1440B1E20AB5276000C7817 /* TaskUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */; };
 		E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2120B20676000C7817 /* SettingsViewController.swift */; };
 		E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2520B221D3000C7817 /* TaskCell.swift */; };
+		E1440B2820B2D96E000C7817 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2720B2D96E000C7817 /* CategoryTableViewController.swift */; };
+		E1440B2B20B2E471000C7817 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2920B2E471000C7817 /* CategoryTableViewCell.swift */; };
+		E1440B2C20B2E471000C7817 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1440B2A20B2E471000C7817 /* CategoryTableViewCell.xib */; };
+		E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUpdateViewController.swift; sourceTree = "<group>"; };
 		E1440B2120B20676000C7817 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1440B2520B221D3000C7817 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		E1440B2720B2D96E000C7817 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		E1440B2920B2E471000C7817 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		E1440B2A20B2E471000C7817 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUpdateViewController.swift; sourceTree = "<group>"; };
 		F2C7F8B0E04C1338175E1113 /* Pods-Task Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,8 @@
 				E1440B1B20AB45AB000C7817 /* TasksTableViewController.swift */,
 				E1440B1D20AB5276000C7817 /* TaskUpdateViewController.swift */,
 				E1440B2120B20676000C7817 /* SettingsViewController.swift */,
+				E1440B2720B2D96E000C7817 /* CategoryTableViewController.swift */,
+				E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				E1440B2520B221D3000C7817 /* TaskCell.swift */,
+				E1440B2920B2E471000C7817 /* CategoryTableViewCell.swift */,
+				E1440B2A20B2E471000C7817 /* CategoryTableViewCell.xib */,
 			);
 			path = "Collection VIew Cells";
 			sourceTree = "<group>";
@@ -202,6 +214,7 @@
 				E1440B0820A9F8B7000C7817 /* LaunchScreen.storyboard in Resources */,
 				E1440B0520A9F8B7000C7817 /* Assets.xcassets in Resources */,
 				E1440B0020A9F8B6000C7817 /* Main.storyboard in Resources */,
+				E1440B2C20B2E471000C7817 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,11 +228,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ColorPickerRow/ColorPickerRow.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ColorPickerRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -266,11 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */,
 				E1440B1220AB24AA000C7817 /* Task.swift in Sources */,
 				E1440B1C20AB45AB000C7817 /* TasksTableViewController.swift in Sources */,
 				E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */,
 				E1440B1420AB24D3000C7817 /* Category.swift in Sources */,
 				E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */,
+				E1440B2B20B2E471000C7817 /* CategoryTableViewCell.swift in Sources */,
+				E1440B2820B2D96E000C7817 /* CategoryTableViewController.swift in Sources */,
 				E1440AFB20A9F8B6000C7817 /* AppDelegate.swift in Sources */,
 				E1440B1E20AB5276000C7817 /* TaskUpdateViewController.swift in Sources */,
 				E1440B0320A9F8B6000C7817 /* Task_Manager.xcdatamodeld in Sources */,
@@ -421,10 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -440,10 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

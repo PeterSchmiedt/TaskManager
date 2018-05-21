@@ -30,9 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Failed to fetch categories: \(error)")
         }
-        
-        
-        
+
         return true
     }
 

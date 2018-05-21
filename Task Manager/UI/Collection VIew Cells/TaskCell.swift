@@ -42,7 +42,7 @@ class TaskCell: UITableViewCell {
         dateFormatter.dateFormat = "d.M.yyyy H:m"
         taskDateLabel.text = dateFormatter.string(from: task.date)
         
-        categoryColorLabel.backgroundColor = task.belongsTo.color //TODO: When switching the last item in section, produces fatal error "categoryColorLabel.backgroundColor" is nil for some reason
+        categoryColorLabel?.backgroundColor = task.belongsTo.color
         
         isDone.setOn(task.isDone, animated: false)
     }
@@ -51,8 +51,8 @@ class TaskCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        taskNameLabel.text = nil
-        taskDateLabel.text = nil
-        categoryColorLabel = nil
+        taskNameLabel?.text = nil
+        taskDateLabel?.text = nil
+        categoryColorLabel?.backgroundColor = nil
     }
 }
