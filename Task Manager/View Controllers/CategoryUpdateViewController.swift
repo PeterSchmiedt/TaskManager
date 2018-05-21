@@ -47,6 +47,8 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
         <<< InlineColorPickerRow() { row in
             row.tag = "color"
             row.title = "Color"
+            row.value = category?.color
+            row.add(rule: RuleRequired())
         }
     }
     
@@ -55,7 +57,49 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
             row.baseCell.cellBecomeFirstResponder()
         }))
-        
         present(alertController, animated: true)
+    }
+    
+    //MARK: - Navigation
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard
+            let nameRow = form.rowBy(tag: "name") as? TextRow,
+            let colorRow = form.rowBy(tag: "color") as? InlineColorPickerRow
+            else {
+                fatalError("Form inconsistency")
+        }
+        
+        //Name and Color validation
+        
+        form.validate()
+        
+        guard nameRow.isValid else {
+            presentValidationError(error: "Ivalid Name", row: nameRow)
+            return
+        }
+        
+        guard colorRow.isValid else {
+            presentValidationError(error: "Ivalid Color", row: colorRow)
+            return
+        }
+        
+        // All validated. Save!
+        let saveCategory = category ?? Category(context: appDelegate.persistentContainer.viewContext)
+        
+        saveCategory.name = nameRow.value!
+        saveCategory.color = colorRow.value!
+        
+        do {
+            try appDelegate.persistentContainer.viewContext.save()
+        } catch {
+            fatalError("Can't save task.")
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }

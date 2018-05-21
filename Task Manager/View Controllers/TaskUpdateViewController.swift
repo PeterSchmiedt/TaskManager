@@ -50,8 +50,6 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             if !row.isValid {
                 cell.titleLabel?.textColor = .red
             }
-        }.onChange() { row in
-            
         }
             
         <<< TextAreaRow() { row in
@@ -59,8 +57,6 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             row.title = "Description"
             row.value = task?.desc
             row.placeholder = "Description"
-        }.onChange() {row in
-            
         }
             
         +++ Section("Notification")
@@ -68,16 +64,12 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             row.tag = "date"
             row.title = "Date"
             row.value = task?.date ?? Date()
-        }.onChange() { row in
-            
         }
         
         <<< SwitchRow() { row in
             row.tag = "notify"
             row.title = "Recieve notification"
             row.value = task?.notify ?? false
-        }.onChange() { row in
-            
         }
         
         +++ Section("Category")
@@ -91,8 +83,6 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             }
             row.add(rule: RuleRequired())
             row.options = fetchCategories()
-        }.onChange() { row in
-            
         }
     }
     
@@ -112,17 +102,15 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
             row.baseCell.cellBecomeFirstResponder()
         }))
-        
         present(alertController, animated: true)
     }
     
+    //MARK: - Navigation
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func save(_ sender: Any) {
-        //TODO: Save to CoreData
-        
         guard
             let dateRow = form.rowBy(tag: "date") as? DateTimeRow,
             let doneRow = form.rowBy(tag: "isDone") as? CheckRow,
@@ -139,8 +127,8 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
         form.validate()
         
         guard dateRow.isValid else {
-                presentValidationError(error: "Invalid date", row: dateRow)
-                return
+            presentValidationError(error: "Invalid date", row: dateRow)
+            return
         }
         
         guard nameRow.isValid else {
