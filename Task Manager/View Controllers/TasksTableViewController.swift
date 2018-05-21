@@ -24,7 +24,6 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: "isDone", cacheName: nil)
         
         fetchedResultsController.delegate = self
-        
         return fetchedResultsController
     }()
     

@@ -119,22 +119,55 @@
             </objects>
             <point key="canvasLocation" x="3033" y="-45"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="X9H-WC-v6o">
             <objects>
-                <tableViewController id="iKb-fz-Fpb" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryTableViewController" id="iKb-fz-Fpb" customClass="CategoryTableViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GEx-2D-Iay">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cfu-I0-QZh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="50" id="Cfu-I0-QZh" customClass="CategoryCell" customModule="Task_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cfu-I0-QZh" id="CcK-yF-vVk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBV-sn-uh4">
+                                            <rect key="frame" x="16" y="14" width="120" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-B5-UUD">
+                                            <rect key="frame" x="339" y="14" width="20" height="20"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Bhi-9B-2bB"/>
+                                                <constraint firstAttribute="width" constant="20" id="JEB-Mn-Gqg"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UBV-sn-uh4" firstAttribute="leading" secondItem="CcK-yF-vVk" secondAttribute="leading" constant="16" id="5WL-ka-Qb1"/>
+                                        <constraint firstItem="UBV-sn-uh4" firstAttribute="centerY" secondItem="CcK-yF-vVk" secondAttribute="centerY" id="Dyd-Ut-er1"/>
+                                        <constraint firstAttribute="trailing" secondItem="NR3-B5-UUD" secondAttribute="trailing" constant="16" id="Em0-IM-PSa"/>
+                                        <constraint firstItem="NR3-B5-UUD" firstAttribute="centerY" secondItem="CcK-yF-vVk" secondAttribute="centerY" id="gpY-2c-5Ai"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UBV-sn-uh4" secondAttribute="trailing" constant="50" id="vJu-El-PtX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryColorView" destination="NR3-B5-UUD" id="anU-Mk-ABZ"/>
+                                    <outlet property="categoryNameLabel" destination="UBV-sn-uh4" id="GWR-8A-iGC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -145,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MxG-Eq-Wmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="-45"/>
+            <point key="canvasLocation" x="3900" y="-45.42728635682159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z5e-ls-5xu">

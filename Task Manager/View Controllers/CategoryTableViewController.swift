@@ -21,7 +21,6 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
         }
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-        
         fetchedResultsController.delegate = self
         
         return fetchedResultsController
@@ -31,7 +30,9 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
+        //self.tableView.register(CategoryCell.self, forCellReuseIdentifier: CategoryCell.identifier)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(updateCategory(sender:)))
         
         do {
             try fetchedResultsController.performFetch()
@@ -44,29 +45,37 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector(("updateCategory:")))
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let quotes = fetchedResultsController.fetchedObjects else {
+        guard let categories = fetchedResultsController.fetchedObjects else {
             return 0
         }
-        return quotes.count
+        return categories.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else {
+            return UITableViewCell()
+        }
 
         // Configure the cell...
         let category = self.fetchedResultsController.object(at: indexPath)
-        //cell.textLabel?.text = category.name
-        
         cell.setupCell(category: category)
 
         return cell
+    }
+    
+    // MARK: - Table View delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = fetchedResultsController.object(at: indexPath)
+        if let editCategoryNavigationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateCategoryNavigationController") as? UINavigationController,
+            let editCategoryViewController = editCategoryNavigationViewController.topViewController as? CategoryUpdateViewController {
+            editCategoryViewController.category = category
+            present(editCategoryNavigationViewController, animated: true, completion: nil)
+        }
     }
 
     /*
@@ -80,10 +89,43 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
     */
     
     //MARK: - Update Category
-    func updateCategory(_ sender: Any?) {
+    @objc func updateCategory(sender: UIBarButtonItem) {
         print("button pressed")
-        
-        
+    }
+    
+    // MARK: - NSFetchedResultsController
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+        case .move:
+            break
+        case .update:
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .update:
+            tableView.reloadRows(at: [indexPath!], with: .fade)
+        case .move:
+            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 
 }

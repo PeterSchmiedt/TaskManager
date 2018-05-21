@@ -27,7 +27,7 @@ class SettingsViewController: FormViewController {
         <<< ButtonRow() { (row: ButtonRow) -> Void in
             row.tag = "categoryManager"
             row.title = "Manage Categories"
-            row.presentationMode = .show(controllerProvider: ControllerProvider.callback(builder: { return CategoryTableViewController() }), onDismiss: nil)
+            row.presentationMode = .show(controllerProvider: ControllerProvider.storyBoard(storyboardId: "CategoryTableViewController", storyboardName: "Main", bundle: Bundle(for: CategoryTableViewController.self)), onDismiss: nil)
         }
     }
     

@@ -9,30 +9,15 @@
 import UIKit
 import CoreData
 
-protocol TaskCellDelegate: class {
-    func taskContentDidChange()
-}
-
 class TaskCell: UITableViewCell {
     static let identifier = "TaskCell"
-    
-    weak var delegate: TaskCellDelegate?
-    
-    var appDelegate : AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
+
     
     //MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var taskDateLabel: UILabel!
     @IBOutlet weak var categoryColorLabel: UIView!
     @IBOutlet weak var isDone: UISwitch!
-    
-    //MARK: - Actions
-//    @IBAction func isDoneSwitch(_ sender: UISwitch) {
-//        let moc = appDelegate.persistentContainer.viewContext
-//
-//    }
     
     //MARK: - Public Interface
     func setupCell(task: Task) {

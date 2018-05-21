@@ -49,4 +49,13 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
             row.title = "Color"
         }
     }
+    
+    func presentValidationError(error: String, row: BaseRow) {
+        let alertController = UIAlertController(title: "Validation error", message: error, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+            row.baseCell.cellBecomeFirstResponder()
+        }))
+        
+        present(alertController, animated: true)
+    }
 }

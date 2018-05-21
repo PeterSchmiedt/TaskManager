@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  CategoryCell.swift
 //  Task Manager
 //
 //  Created by Peter Schmiedt on 21/05/2018.
@@ -7,35 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
-class CategoryTableViewCell: UITableViewCell {
-
+class CategoryCell: UITableViewCell {
     static let identifier = "CategoryCell"
     
     //MARK: - Outlets
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryColorView: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
+    //MARK: - Public Interface
     func setupCell(category: Category) {
-        categoryLabel?.text = category.name
+        categoryNameLabel?.text = category.name
         categoryColorView?.backgroundColor = category.color
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    //MARK: - LifeCycle
     override func prepareForReuse() {
         super.prepareForReuse()
-        categoryLabel?.text = nil
+        
+        categoryNameLabel?.text = nil
         categoryColorView?.backgroundColor = nil
     }
-    
 }
