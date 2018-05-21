@@ -158,9 +158,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UBV-sn-uh4" firstAttribute="leading" secondItem="CcK-yF-vVk" secondAttribute="leading" constant="16" id="5WL-ka-Qb1"/>
-                                        <constraint firstItem="UBV-sn-uh4" firstAttribute="centerY" secondItem="CcK-yF-vVk" secondAttribute="centerY" id="Dyd-Ut-er1"/>
                                         <constraint firstAttribute="trailing" secondItem="NR3-B5-UUD" secondAttribute="trailing" constant="16" id="Em0-IM-PSa"/>
+                                        <constraint firstAttribute="bottom" secondItem="UBV-sn-uh4" secondAttribute="bottom" constant="14" id="dJK-Or-pec"/>
                                         <constraint firstItem="NR3-B5-UUD" firstAttribute="centerY" secondItem="CcK-yF-vVk" secondAttribute="centerY" id="gpY-2c-5Ai"/>
+                                        <constraint firstItem="UBV-sn-uh4" firstAttribute="top" secondItem="CcK-yF-vVk" secondAttribute="top" constant="14" id="lcI-NZ-xUv"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UBV-sn-uh4" secondAttribute="trailing" constant="50" id="vJu-El-PtX"/>
                                     </constraints>
                                 </tableViewCellContentView>

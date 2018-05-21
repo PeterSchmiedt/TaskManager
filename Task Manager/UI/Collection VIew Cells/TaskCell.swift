@@ -12,6 +12,7 @@ import CoreData
 class TaskCell: UITableViewCell {
     static let identifier = "TaskCell"
 
+    var task: Task?
     
     //MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
@@ -30,6 +31,13 @@ class TaskCell: UITableViewCell {
         categoryColorLabel?.backgroundColor = task.belongsTo.color
         
         isDone.setOn(task.isDone, animated: false)
+        
+        self.task = task
+    }
+    
+    func reload() {
+        guard let task = self.task else { return }
+        setupCell(task: task)
     }
     
     //MARK: - LifeCycle

@@ -13,7 +13,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     
     lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
         let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
-        let isDoneSortDescriptor = NSSortDescriptor(key: "isDone", ascending: false)
+        let isDoneSortDescriptor = NSSortDescriptor(key: "isDone", ascending: true)
         let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [isDoneSortDescriptor, dateSortDescriptor]
         
@@ -149,6 +149,10 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
             tableView.reloadRows(at: [indexPath!], with: .fade)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        }
+        
+        if let indexPath = indexPath, let taskCell = tableView.cellForRow(at: indexPath) as? TaskCell {
+            taskCell.reload()
         }
     }
     

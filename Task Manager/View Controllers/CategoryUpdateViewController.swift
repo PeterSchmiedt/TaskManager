@@ -79,12 +79,12 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
         form.validate()
         
         guard nameRow.isValid else {
-            presentValidationError(error: "Ivalid Name", row: nameRow)
+            presentValidationError(error: "Invalid Name", row: nameRow)
             return
         }
         
         guard colorRow.isValid else {
-            presentValidationError(error: "Ivalid Color", row: colorRow)
+            presentValidationError(error: "Invalid Color", row: colorRow)
             return
         }
         
@@ -96,6 +96,7 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
         
         do {
             try appDelegate.persistentContainer.viewContext.save()
+            appDelegate.persistentContainer.viewContext.refreshAllObjects()
         } catch {
             fatalError("Can't save task.")
         }

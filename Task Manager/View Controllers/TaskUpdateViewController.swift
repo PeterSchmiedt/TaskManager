@@ -87,11 +87,9 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
     }
     
     func fetchCategories() -> [Category] {
-        let moc = appDelegate.persistentContainer.viewContext
         let categoryFetch = NSFetchRequest<Category>(entityName: "Category")
-        
         do {
-            return try moc.fetch(categoryFetch)
+            return try appDelegate.persistentContainer.viewContext.fetch(categoryFetch)
         } catch {
             fatalError("Failed to fetch categories: \(error)")
         }

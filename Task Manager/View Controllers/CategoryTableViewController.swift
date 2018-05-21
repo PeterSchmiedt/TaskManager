@@ -30,8 +30,6 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tableView.register(CategoryCell.self, forCellReuseIdentifier: CategoryCell.identifier)
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(updateCategory(sender:)))
         
         do {
@@ -39,12 +37,6 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
         } catch {
             fatalError("Cannot fetch results")
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -61,7 +53,6 @@ class CategoryTableViewController: UITableViewController, NSFetchedResultsContro
             return UITableViewCell()
         }
 
-        // Configure the cell...
         let category = self.fetchedResultsController.object(at: indexPath)
         cell.setupCell(category: category)
 
