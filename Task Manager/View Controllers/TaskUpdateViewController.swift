@@ -159,7 +159,7 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
         
         //Create notification if there is one
         if saveTask.notify {
-            NotificationService.shared.scheduleNotification(name: saveTask.name, desc: saveTask.desc, at: saveTask.date)
+            NotificationService.shared.scheduleNotification(task: saveTask)
         }
         
         dismiss(animated: true, completion: nil)

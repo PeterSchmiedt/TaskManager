@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error ?? "Default notification error")
             }
         }
+        
+        NotificationService.shared.setupCategory()
 
         return true
     }

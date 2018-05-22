@@ -25,15 +25,26 @@ class NotificationService {
         }
     }
     
-    func scheduleNotification(name: String, desc: String?, at date: Date) {
+    func setupCategory() {
+        //let doneAction = UNNotificationAction(identifier: "DONE_ACTION", title: "Mark as completed", options: UNNotificationActionOptions(rawValue: 0))
+        let dismissAction = UNNotificationAction(identifier: "DISMISS_ACTION", title: "Dismiss", options: UNNotificationActionOptions(rawValue: 0))
+        
+        let taskCategory = UNNotificationCategory(identifier: "TASK_CATEGORY", actions: [dismissAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.setNotificationCategories([taskCategory])
+    }
+    
+    func scheduleNotification(task: Task) {
         //Create Content
         let content = UNMutableNotificationContent()
-        content.title = name
-        if let body = desc { content.body = body } else { content.body = "" }
+        content.title = task.name
+        if let body = task.desc { content.body = body } else { content.body = "" }
+        content.categoryIdentifier = "TASK_CATEGORY"
         
         //Setup Trigger
         let calendar = Calendar.current
-        let components = calendar.dateComponents(in: .current, from: date)
+        let components = calendar.dateComponents(in: .current, from: task.date)
         let dateComponents = DateComponents(calendar: Calendar.current, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
@@ -46,7 +57,7 @@ class NotificationService {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request) { (error) in
             if error != nil {
-                print("Did not register notification \(name)")
+                print("Did not register notification \(task.name)")
             }
         }
     }
