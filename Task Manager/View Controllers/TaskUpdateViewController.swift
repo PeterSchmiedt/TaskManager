@@ -70,6 +70,9 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             row.tag = "notify"
             row.title = "Recieve notification"
             row.value = task?.notify ?? false
+            row.disabled = Condition.function(["notify"], { form in
+                return !(NotificationService.shared.isUserEnabled && NotificationService.shared.isOSEnabled)
+            })
         }
         
         +++ Section("Category")

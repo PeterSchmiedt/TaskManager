@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Failed to fetch categories: \(error)")
         }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) { granted, error in
+            if granted {
+                print("Approval granted to send notifications")
+                NotificationService.shared.isOSEnabled = true
+            } else {
+                NotificationService.shared.isOSEnabled = false
+                print(error ?? "Default notification error")
+            }
+        }
 
         return true
     }
@@ -46,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        NotificationService.shared.checkAuthorization()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

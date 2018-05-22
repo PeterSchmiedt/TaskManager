@@ -20,8 +20,15 @@ class SettingsViewController: FormViewController {
         <<< SwitchRow() { row in
             row.tag = "notify"
             row.title = "Enable notifications"
-            //row.value =
-        }
+            row.value = NotificationService.shared.isUserEnabled
+            row.disabled = Condition.function(["notify"], { form in
+                return !NotificationService.shared.isOSEnabled
+            })
+            }.onChange { row in
+                if let switchRowValue = row.value {
+                    NotificationService.shared.isUserEnabled = switchRowValue //Change accordingly to user settings
+                }
+            }
         
         +++ Section("Category")
         <<< ButtonRow() { (row: ButtonRow) -> Void in
