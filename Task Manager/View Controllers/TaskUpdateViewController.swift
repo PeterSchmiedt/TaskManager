@@ -157,7 +157,10 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             fatalError("Can't save task.")
         }
         
-        //TODO: reload the table data if the task completion changes
+        //Create notification if there is one
+        if saveTask.notify {
+            NotificationService.shared.scheduleNotification(name: saveTask.name, desc: saveTask.desc, at: saveTask.date)
+        }
         
         dismiss(animated: true, completion: nil)
     }
