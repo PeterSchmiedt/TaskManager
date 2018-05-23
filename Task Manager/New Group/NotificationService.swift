@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 import UserNotifications
+import CoreData
 
 class NotificationService {
     
@@ -63,9 +65,39 @@ class NotificationService {
         }
     }
     
-    func turnOffActiveNotifications() {
+    //MARK: - Notification ON/OFF handling
+    func removeActiveNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
-        //notificationCenter.getPendingNotificationRequests(completionHandler: <#T##([UNNotificationRequest]) -> Void#>)
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
+    func setActiveNotifications() {
+        //Get all objects from coreData
+        guard let persistentContainer = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer else {
+            fatalError("Persistent Container not found")
+        }
+        
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        
+        //Filter objects by notify and date
+        fetchRequest.predicate = NSPredicate(format: "(notify != %@) AND (date > %@)", argumentArray: ["YES", Date()])
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Cannot fetch results")
+        }
+        
+        //Set the notifications again
+        if let tasks = fetchedResultsController.fetchedObjects {
+            for task in tasks {
+                print(task.name)
+                scheduleNotification(task: task)
+            }
+        }
     }
     
 }

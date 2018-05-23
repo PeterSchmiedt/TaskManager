@@ -27,6 +27,7 @@ class SettingsViewController: FormViewController {
             }.onChange { row in
                 if let switchRowValue = row.value {
                     NotificationService.shared.isUserEnabled = switchRowValue //Change accordingly to user settings
+                    switchRowValue ? NotificationService.shared.setActiveNotifications() : NotificationService.shared.removeActiveNotifications()
                 }
             }
             
