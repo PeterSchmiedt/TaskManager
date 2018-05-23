@@ -42,8 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        NotificationService.shared.isUserEnabled = UserDefaults.standard.bool(forKey: "isUserEnabled") //load
+        if (UserDefaults.standard.string(forKey: "sortBy") == nil) {
+            UserDefaults.standard.set("By Date", forKey: "sortBy")
+        }
+        
         NotificationService.shared.setupCategory()
-
+        
         return true
     }
 
@@ -55,10 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        UserDefaults.standard.set(NotificationService.shared.isUserEnabled, forKey: "isUserEnabled") //save
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        NotificationService.shared.isUserEnabled = UserDefaults.standard.bool(forKey: "isUserEnabled") //load
+        
         NotificationService.shared.checkAuthorization()
     }
 
@@ -68,6 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        UserDefaults.standard.set(NotificationService.shared.isUserEnabled, forKey: "isUserEnabled") //save
+        
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }

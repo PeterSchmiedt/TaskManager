@@ -29,6 +29,17 @@ class SettingsViewController: FormViewController {
                     NotificationService.shared.isUserEnabled = switchRowValue //Change accordingly to user settings
                 }
             }
+            
+        +++ Section("Order")
+        <<< PushRow<String>() { row in
+            row.tag = "order"
+            row.title = "Order by"
+            row.value = UserDefaults.standard.string(forKey: "orderBy")
+            row.options = ["By Date", "By Name"]
+            row.add(rule: RuleRequired())
+        }.onChange { row in
+            UserDefaults.standard.set(row.value, forKey: "orderBy")
+        }
         
         +++ Section("Category")
         <<< ButtonRow() { (row: ButtonRow) -> Void in

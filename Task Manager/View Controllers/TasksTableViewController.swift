@@ -11,11 +11,18 @@ import CoreData
 
 class TasksTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    var orderBy = UserDefaults.standard.string(forKey: "orderBy") //load
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
         let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
         let isDoneSortDescriptor = NSSortDescriptor(key: "isDone", ascending: true)
         let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [isDoneSortDescriptor, dateSortDescriptor]
+        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        //Decide how to sort
+        let sortDescriptor = (orderBy == "By Date") ? dateSortDescriptor : nameSortDescriptor
+        
+        fetchRequest.sortDescriptors = [isDoneSortDescriptor, sortDescriptor]
         
         guard let persistentContainer = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer else {
             fatalError("Persistent Container not found")
@@ -37,6 +44,12 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         } catch {
             fatalError("Cannot fetch results")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 
     // MARK: - Table view data source

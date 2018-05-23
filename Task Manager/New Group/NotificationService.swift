@@ -16,7 +16,7 @@ class NotificationService {
     var isUserEnabled = false
     var isOSEnabled = false
     
-    //MARK - Services
+    //MARK: - Services - NotificationCenter
     func checkAuthorization() {
         let notificationCenter = UNUserNotificationCenter.current()
         
@@ -35,6 +35,7 @@ class NotificationService {
         notificationCenter.setNotificationCategories([taskCategory])
     }
     
+    //MARK: - Services - Notifications
     func scheduleNotification(task: Task) {
         //Create Content
         let content = UNMutableNotificationContent()
@@ -60,6 +61,11 @@ class NotificationService {
                 print("Did not register notification \(task.name)")
             }
         }
+    }
+    
+    func turnOffActiveNotifications() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        //notificationCenter.getPendingNotificationRequests(completionHandler: <#T##([UNNotificationRequest]) -> Void#>)
     }
     
 }

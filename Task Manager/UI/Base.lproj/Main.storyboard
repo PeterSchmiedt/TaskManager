@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,16 +82,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="7VR-qV-Bxf">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="NavigationBarSettings" id="MOQ-Al-Rd7">
-                            <connections>
-                                <segue destination="IHQ-Eq-OR7" kind="presentation" id="88K-8F-hmR"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rdA-Hw-pMX">
-                            <connections>
-                                <segue destination="BL8-Ha-jBr" kind="presentation" identifier="AddTaskSegue" id="RvK-cU-HLi"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="rdA-Hw-pMX">
+                                <connections>
+                                    <segue destination="BL8-Ha-jBr" kind="presentation" identifier="AddTaskSegue" id="RvK-cU-HLi"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="NavigationBarSettings" id="MOQ-Al-Rd7">
+                                <connections>
+                                    <segue destination="IHQ-Eq-OR7" kind="presentation" id="88K-8F-hmR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKe-sQ-yZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
