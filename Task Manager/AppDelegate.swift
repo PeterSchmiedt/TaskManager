@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         NotificationService.shared.isUserEnabled = UserDefaults.standard.bool(forKey: "isUserEnabled") //load
+        
         if (UserDefaults.standard.string(forKey: "sortBy") == nil) {
             UserDefaults.standard.set("By Date", forKey: "sortBy")
         }

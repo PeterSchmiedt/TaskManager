@@ -37,7 +37,6 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -55,6 +54,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         } catch {
             fatalError("Cannot fetch results")
         }
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
