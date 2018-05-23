@@ -35,11 +35,12 @@ class SettingsViewController: FormViewController {
         <<< PushRow<String>() { row in
             row.tag = "order"
             row.title = "Order by"
-            row.value = UserDefaults.standard.string(forKey: "orderBy")
+            row.value = UserDefaults.standard.string(forKey: "sortBy")
             row.options = ["By Date", "By Name"]
             row.add(rule: RuleRequired())
         }.onChange { row in
-            UserDefaults.standard.set(row.value, forKey: "orderBy")
+            UserDefaults.standard.set(row.value, forKey: "sortBy") //save
+            UserDefaults.standard.synchronize()
         }
         
         +++ Section("Category")

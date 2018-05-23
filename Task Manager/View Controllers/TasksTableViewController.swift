@@ -19,7 +19,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
 
         //Decide how to sort
-        let sortDescriptor = (UserDefaults.standard.string(forKey: "orderBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
+        let sortDescriptor = (UserDefaults.standard.string(forKey: "sortBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
         
         fetchRequest.sortDescriptors = [isDoneSortDescriptor, sortDescriptor]
         
@@ -34,21 +34,12 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     }()
     
     
-    // MARK: - View Controller Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            fatalError("Cannot fetch results")
-        }
-    }
-    
+    // MARK: - View Controller Lifecycle    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         do {
-            let sortDescriptor = (UserDefaults.standard.string(forKey: "orderBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
+            let sortDescriptor = (UserDefaults.standard.string(forKey: "sortBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
             fetchedResultsController.fetchRequest.sortDescriptors = [isDoneSortDescriptor, sortDescriptor]
             try fetchedResultsController.performFetch()
         } catch {

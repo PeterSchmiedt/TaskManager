@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //seed the 4 default categories
-        
         let moc = self.persistentContainer.viewContext
         let categoryFetch = NSFetchRequest<Category>(entityName: "Category")
         do {
@@ -46,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (UserDefaults.standard.string(forKey: "sortBy") == nil) {
             UserDefaults.standard.set("By Date", forKey: "sortBy")
+            UserDefaults.standard.synchronize()
         }
         
         NotificationService.shared.setupCategory()
@@ -53,15 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         UserDefaults.standard.set(NotificationService.shared.isUserEnabled, forKey: "isUserEnabled") //save
+        UserDefaults.standard.synchronize()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -71,21 +67,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationService.shared.checkAuthorization()
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
         UserDefaults.standard.set(NotificationService.shared.isUserEnabled, forKey: "isUserEnabled") //save
-        
+        UserDefaults.standard.synchronize()
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -114,7 +105,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let moc = persistentContainer.viewContext
         if moc.hasChanges {
