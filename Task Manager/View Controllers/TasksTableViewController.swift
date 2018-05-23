@@ -11,16 +11,15 @@ import CoreData
 
 class TasksTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var orderBy = UserDefaults.standard.string(forKey: "orderBy") //load
+    let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+    let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    let isDoneSortDescriptor = NSSortDescriptor(key: "isDone", ascending: true)
     
     lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
         let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
-        let isDoneSortDescriptor = NSSortDescriptor(key: "isDone", ascending: true)
-        let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        
+
         //Decide how to sort
-        let sortDescriptor = (orderBy == "By Date") ? dateSortDescriptor : nameSortDescriptor
+        let sortDescriptor = (UserDefaults.standard.string(forKey: "orderBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
         
         fetchRequest.sortDescriptors = [isDoneSortDescriptor, sortDescriptor]
         
@@ -49,7 +48,13 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        do {
+            let sortDescriptor = (UserDefaults.standard.string(forKey: "orderBy") == "By Date") ? dateSortDescriptor : nameSortDescriptor
+            fetchedResultsController.fetchRequest.sortDescriptors = [isDoneSortDescriptor, sortDescriptor]
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Cannot fetch results")
+        }
     }
 
     // MARK: - Table view data source
