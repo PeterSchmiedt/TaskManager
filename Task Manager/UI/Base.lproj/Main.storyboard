@@ -75,7 +75,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryColorLabel" destination="lko-hd-ePt" id="ZHR-fn-bE4"/>
+                                    <outlet property="categoryColorView" destination="lko-hd-ePt" id="ZHR-fn-bE4"/>
                                     <outlet property="isDone" destination="TuV-UT-duG" id="El3-tl-xfL"/>
                                     <outlet property="taskDateLabel" destination="nds-cf-aD8" id="QZ7-jE-YGj"/>
                                     <outlet property="taskNameLabel" destination="D2P-nI-QqX" id="1dk-pY-gpK"/>

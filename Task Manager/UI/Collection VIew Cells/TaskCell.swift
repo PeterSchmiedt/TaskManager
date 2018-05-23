@@ -17,7 +17,7 @@ class TaskCell: UITableViewCell {
     //MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var taskDateLabel: UILabel!
-    @IBOutlet weak var categoryColorLabel: UIView!
+    @IBOutlet weak var categoryColorView: UIView!
     @IBOutlet weak var isDone: UISwitch!
     
     //MARK: - Public Interface
@@ -28,7 +28,7 @@ class TaskCell: UITableViewCell {
         dateFormatter.dateFormat = "d.M.yyyy H:m"
         taskDateLabel.text = dateFormatter.string(from: task.date)
         
-        categoryColorLabel?.backgroundColor = task.belongsTo.color
+        categoryColorView?.backgroundColor = task.belongsTo.color
         
         isDone.setOn(task.isDone, animated: false)
         
@@ -40,12 +40,30 @@ class TaskCell: UITableViewCell {
         setupCell(task: task)
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        let color = categoryColorView.backgroundColor
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            categoryColorView.backgroundColor = color
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let color = categoryColorView.backgroundColor
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if highlighted {
+            categoryColorView.backgroundColor = color
+        }
+    }
+    
     //MARK: - LifeCycle
     override func prepareForReuse() {
         super.prepareForReuse()
         
         taskNameLabel?.text = nil
         taskDateLabel?.text = nil
-        categoryColorLabel?.backgroundColor = nil
+        categoryColorView?.backgroundColor = nil
     }
 }
