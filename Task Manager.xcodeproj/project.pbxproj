@@ -77,13 +77,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E10D1C1D20B367650092EBD2 /* Services */ = {
+		E13137C620CBE3A400E3AE7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				E10D1C1E20B3678F0092EBD2 /* NotificationService.swift */,
 			);
-			name = Services;
-			path = "New Group";
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E1440AEE20A9F8B6000C7817 = {
@@ -107,7 +106,7 @@
 		E1440AF920A9F8B6000C7817 /* Task Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E10D1C1D20B367650092EBD2 /* Services */,
+				E13137C620CBE3A400E3AE7C /* Services */,
 				E1440B1920AB453B000C7817 /* UI */,
 				E1440B1A20AB458D000C7817 /* View Controllers */,
 				E1440B0F20AB2459000C7817 /* Model */,
