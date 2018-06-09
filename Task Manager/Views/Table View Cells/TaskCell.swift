@@ -16,21 +16,23 @@ class TaskCell: UITableViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskDetailLabel: UILabel!
     @IBOutlet weak var taskDateLabel: UILabel!
-    @IBOutlet weak var categoryColorView: UIView!
-    @IBOutlet weak var isDone: UISwitch!
+    @IBOutlet weak var categoryColorView: BallView!
+    @IBOutlet weak var isDoneButton: UIButton!
     
     //MARK: - Public Interface
     func setupCell(task: Task) {
         taskNameLabel.text = task.name
+        taskDetailLabel.text = task.desc
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d.M.yyyy HH:mm"
         taskDateLabel.text = dateFormatter.string(from: task.date)
         
-        categoryColorView?.backgroundColor = task.belongsTo.color
+        categoryColorView?.color = task.belongsTo.color
         
-        isDone.setOn(task.isDone, animated: false)
+        isDoneButton.isSelected = task.isDone
         
         self.task = task
     }
@@ -40,30 +42,19 @@ class TaskCell: UITableViewCell {
         setupCell(task: task)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        let color = categoryColorView.backgroundColor
-        super.setSelected(selected, animated: animated)
-        
-        if selected {
-            categoryColorView.backgroundColor = color
-        }
-    }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        let color = categoryColorView.backgroundColor
-        super.setHighlighted(highlighted, animated: animated)
-        
-        if highlighted {
-            categoryColorView.backgroundColor = color
-        }
-    }
-    
     //MARK: - LifeCycle
     override func prepareForReuse() {
         super.prepareForReuse()
         
         taskNameLabel?.text = nil
         taskDateLabel?.text = nil
-        categoryColorView?.backgroundColor = nil
+        categoryColorView?.color = .clear
     }
+    
+    // MARK: - Actions
+    @IBAction func doneAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        task?.isDone = sender.isSelected
+    }
+    
 }

@@ -34,7 +34,13 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     }()
     
     
-    // MARK: - View Controller Lifecycle    
+    // MARK: - View Controller Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TaskCell")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

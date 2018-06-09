@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8A0D6984234EFBF67A614979 /* Pods_Task_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32911A27820DF090AB2C5C00 /* Pods_Task_Manager.framework */; };
+		C30C8DF720CC309A00F540B2 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DF620CC309A00F540B2 /* TaskCell.xib */; };
+		C30C8E0320CC32CF00F540B2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */; };
+		C30C8E0420CC32CF00F540B2 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */; };
+		C30C8E0520CC32CF00F540B2 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */; };
+		C30C8E0620CC32CF00F540B2 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */; };
+		C30C8E0720CC32CF00F540B2 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */; };
+		C30C8E0820CC32CF00F540B2 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */; };
+		C30C8E0920CC32CF00F540B2 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */; };
+		C30C8E0A20CC32CF00F540B2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFE20CC32B300F540B2 /* OpenSans-Regular.ttf */; };
+		C30C8E0B20CC32CF00F540B2 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFA20CC32B300F540B2 /* OpenSans-SemiBold.ttf */; };
+		C30C8E0C20CC32CF00F540B2 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFF20CC32B300F540B2 /* OpenSans-SemiBoldItalic.ttf */; };
+		C30C8E0F20CC34E000F540B2 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C8E0E20CC34E000F540B2 /* BallView.swift */; };
 		E10D1C1C20B33D620092EBD2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */; };
 		E10D1C1F20B3678F0092EBD2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D1C1E20B3678F0092EBD2 /* NotificationService.swift */; };
 		E1440AFB20A9F8B6000C7817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440AFA20A9F8B6000C7817 /* AppDelegate.swift */; };
@@ -28,6 +40,18 @@
 /* Begin PBXFileReference section */
 		32911A27820DF090AB2C5C00 /* Pods_Task_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F8DD25AD0F899742046666 /* Pods-Task Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.release.xcconfig"; sourceTree = "<group>"; };
+		C30C8DF620CC309A00F540B2 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C30C8DFA20CC32B300F540B2 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		C30C8DFE20CC32B300F540B2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		C30C8DFF20CC32B300F540B2 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C30C8E0E20CC34E000F540B2 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		E10D1C1E20B3678F0092EBD2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		E1440AF720A9F8B6000C7817 /* Task Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +92,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C30C8DF520CC306100F540B2 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */,
+				C30C8DF620CC309A00F540B2 /* TaskCell.xib */,
+				E1440B2520B221D3000C7817 /* TaskCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		C30C8DF820CC32A000F540B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */,
+				C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */,
+				C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */,
+				C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */,
+				C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */,
+				C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */,
+				C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */,
+				C30C8DFE20CC32B300F540B2 /* OpenSans-Regular.ttf */,
+				C30C8DFA20CC32B300F540B2 /* OpenSans-SemiBold.ttf */,
+				C30C8DFF20CC32B300F540B2 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C30C8E0D20CC34B700F540B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C30C8DF520CC306100F540B2 /* Table View Cells */,
+				C30C8E0E20CC34E000F540B2 /* BallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CFB24FCFE86FD37D6F302714 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +166,9 @@
 		E1440AF920A9F8B6000C7817 /* Task Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E1440B1920AB453B000C7817 /* Resources */,
 				E13137C620CBE3A400E3AE7C /* Services */,
-				E1440B1920AB453B000C7817 /* UI */,
+				C30C8E0D20CC34B700F540B2 /* Views */,
 				E1440B1A20AB458D000C7817 /* View Controllers */,
 				E1440B0F20AB2459000C7817 /* Model */,
 				E1440AFA20A9F8B6000C7817 /* AppDelegate.swift */,
@@ -126,15 +187,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E1440B1920AB453B000C7817 /* UI */ = {
+		E1440B1920AB453B000C7817 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C30C8DF820CC32A000F540B2 /* Fonts */,
 				E1440B0420A9F8B7000C7817 /* Assets.xcassets */,
 				E1440B0620A9F8B7000C7817 /* LaunchScreen.storyboard */,
 				E1440AFE20A9F8B6000C7817 /* Main.storyboard */,
-				E1440B2320B2217D000C7817 /* Collection View Cells */,
 			);
-			path = UI;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E1440B1A20AB458D000C7817 /* View Controllers */ = {
@@ -147,15 +208,6 @@
 				E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		E1440B2320B2217D000C7817 /* Collection View Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E1440B2520B221D3000C7817 /* TaskCell.swift */,
-				E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */,
-			);
-			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +270,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30C8DF720CC309A00F540B2 /* TaskCell.xib in Resources */,
 				E1440B0820A9F8B7000C7817 /* LaunchScreen.storyboard in Resources */,
 				E1440B0520A9F8B7000C7817 /* Assets.xcassets in Resources */,
 				E1440B0020A9F8B6000C7817 /* Main.storyboard in Resources */,
+				C30C8E0320CC32CF00F540B2 /* OpenSans-Bold.ttf in Resources */,
+				C30C8E0420CC32CF00F540B2 /* OpenSans-BoldItalic.ttf in Resources */,
+				C30C8E0520CC32CF00F540B2 /* OpenSans-ExtraBold.ttf in Resources */,
+				C30C8E0620CC32CF00F540B2 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				C30C8E0720CC32CF00F540B2 /* OpenSans-Italic.ttf in Resources */,
+				C30C8E0820CC32CF00F540B2 /* OpenSans-Light.ttf in Resources */,
+				C30C8E0920CC32CF00F540B2 /* OpenSans-LightItalic.ttf in Resources */,
+				C30C8E0A20CC32CF00F540B2 /* OpenSans-Regular.ttf in Resources */,
+				C30C8E0B20CC32CF00F540B2 /* OpenSans-SemiBold.ttf in Resources */,
+				C30C8E0C20CC32CF00F540B2 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */,
+				C30C8E0F20CC34E000F540B2 /* BallView.swift in Sources */,
 				E1440B1220AB24AA000C7817 /* Task.swift in Sources */,
 				E1440B1C20AB45AB000C7817 /* TasksTableViewController.swift in Sources */,
 				E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */,
@@ -433,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,7 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

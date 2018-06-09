@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="264" id="WHV-Q2-RHs" customClass="TaskCell" customModule="Task_Manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WHV-Q2-RHs" id="9ly-tv-cGO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Do Stuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6e-53-Oz8">
+                        <rect key="frame" x="68" y="6" width="66.5" height="23.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" name="TMGrey"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do it well. Spend some time on it. Don’t hurry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEy-LT-tHD">
+                        <rect key="frame" x="68" y="30" width="238" height="41"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                        <color key="textColor" name="TMGrey40"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="ZJf-1J-wW7">
+                        <rect key="frame" x="352.5" y="12.5" width="9" height="14"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xp2-U6-MG4" customClass="BallView" customModule="Task_Manager" customModuleProvider="target">
+                        <rect key="frame" x="346" y="52.5" width="14" height="14"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="2Ch-ys-vR1"/>
+                            <constraint firstAttribute="height" constant="14" id="uoP-Pt-JrU"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3P-sf-s6l">
+                        <rect key="frame" x="304" y="8" width="38" height="21"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                        <color key="textColor" name="TMGrey60"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfJ-Yx-4Yr">
+                        <rect key="frame" x="15" y="19" width="45" height="45"/>
+                        <state key="normal" image="Not Done"/>
+                        <state key="selected" image="Done"/>
+                        <connections>
+                            <action selector="doneAction:" destination="WHV-Q2-RHs" eventType="touchUpInside" id="lxQ-Iv-apv"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TfJ-Yx-4Yr" firstAttribute="leading" secondItem="9ly-tv-cGO" secondAttribute="leading" constant="15" id="0lY-01-PP4"/>
+                    <constraint firstAttribute="bottom" secondItem="Xp2-U6-MG4" secondAttribute="bottom" constant="15" id="8Y8-7Z-ZgY"/>
+                    <constraint firstItem="s3P-sf-s6l" firstAttribute="top" secondItem="9ly-tv-cGO" secondAttribute="top" constant="8" id="95N-Tp-cD8"/>
+                    <constraint firstItem="Xp2-U6-MG4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EEy-LT-tHD" secondAttribute="trailing" constant="20" id="BqD-UY-fYV"/>
+                    <constraint firstItem="V6e-53-Oz8" firstAttribute="leading" secondItem="TfJ-Yx-4Yr" secondAttribute="trailing" constant="8" id="GUf-k1-P9a"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EEy-LT-tHD" secondAttribute="bottom" constant="6" id="Gd3-HR-fL5"/>
+                    <constraint firstItem="ZJf-1J-wW7" firstAttribute="leading" secondItem="s3P-sf-s6l" secondAttribute="trailing" constant="10" id="HFP-Ag-tmf"/>
+                    <constraint firstItem="V6e-53-Oz8" firstAttribute="top" secondItem="9ly-tv-cGO" secondAttribute="top" constant="6" id="Jc5-Gx-dRU"/>
+                    <constraint firstItem="EEy-LT-tHD" firstAttribute="top" secondItem="V6e-53-Oz8" secondAttribute="bottom" id="Phg-ei-UnS"/>
+                    <constraint firstItem="EEy-LT-tHD" firstAttribute="leading" secondItem="V6e-53-Oz8" secondAttribute="leading" id="Ww6-bM-qm4"/>
+                    <constraint firstItem="ZJf-1J-wW7" firstAttribute="top" secondItem="9ly-tv-cGO" secondAttribute="top" constant="12.5" id="bFE-n5-JxL"/>
+                    <constraint firstItem="TfJ-Yx-4Yr" firstAttribute="centerY" secondItem="9ly-tv-cGO" secondAttribute="centerY" id="gu4-We-dku"/>
+                    <constraint firstAttribute="trailing" secondItem="ZJf-1J-wW7" secondAttribute="trailing" constant="13.5" id="gxp-lH-kV5"/>
+                    <constraint firstItem="s3P-sf-s6l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V6e-53-Oz8" secondAttribute="trailing" constant="20" id="k3e-3a-yzf"/>
+                    <constraint firstItem="Xp2-U6-MG4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZJf-1J-wW7" secondAttribute="bottom" constant="20" id="qGt-c8-1o0"/>
+                    <constraint firstAttribute="trailing" secondItem="Xp2-U6-MG4" secondAttribute="trailing" constant="15" id="sfx-eO-LNf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryColorView" destination="Xp2-U6-MG4" id="Jv9-Yl-bdl"/>
+                <outlet property="isDoneButton" destination="TfJ-Yx-4Yr" id="rT0-YS-GoP"/>
+                <outlet property="taskDateLabel" destination="s3P-sf-s6l" id="1lN-hX-Ph1"/>
+                <outlet property="taskDetailLabel" destination="EEy-LT-tHD" id="RtN-Pm-1US"/>
+                <outlet property="taskNameLabel" destination="V6e-53-Oz8" id="otM-cm-hq6"/>
+            </connections>
+            <point key="canvasLocation" x="-57.5" y="-64"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Disclosure Indicator" width="9" height="14"/>
+        <image name="Done" width="45" height="45"/>
+        <image name="Not Done" width="45" height="45"/>
+        <namedColor name="TMGrey">
+            <color red="0.17647058823529413" green="0.16470588235294117" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TMGrey40">
+            <color red="0.17647058823529413" green="0.16470588235294117" blue="0.20000000000000001" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TMGrey60">
+            <color red="0.17599999904632568" green="0.16500000655651093" blue="0.20000000298023224" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
