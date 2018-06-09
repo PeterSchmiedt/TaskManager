@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TasksTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class TasksTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, TaskCellDelegate {
     
     let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
     let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -84,6 +84,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
 
         // Set up the cell
         let task = self.fetchedResultsController.object(at: indexPath)
+        cell.delegate = self
         cell.setupCell(task: task)
         
         return cell
@@ -121,20 +122,15 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         }
     }
     
-    //MARK: - Cell Actions
-    @IBAction func taskSwitchFlip(_ sender: UISwitch) {
-        let point = sender.convert(CGPoint.zero, to:tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
-        let switchedTask = fetchedResultsController.object(at: indexPath!)
-        switchedTask.isDone = sender.isOn
-        
+    // MARK: - TaskCellDelegate
+    func didSetDone(task: Task, done: Bool) {
+        task.isDone = done
         do {
             try fetchedResultsController.managedObjectContext.save()
         } catch {
             fatalError("Could not switch task completion")
         }
     }
-    
     
     // MARK: - NSFetchedResultsController
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

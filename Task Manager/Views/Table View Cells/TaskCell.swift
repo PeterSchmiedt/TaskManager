@@ -13,6 +13,7 @@ class TaskCell: UITableViewCell {
     static let identifier = "TaskCell"
 
     var task: Task?
+    var delegate: TaskCellDelegate?
     
     //MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
@@ -53,8 +54,12 @@ class TaskCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func doneAction(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        task?.isDone = sender.isSelected
+        guard let task = task else { return }
+        delegate?.didSetDone(task: task, done: !sender.isSelected)
     }
     
+}
+
+protocol TaskCellDelegate {
+    func didSetDone(task: Task, done: Bool)
 }
