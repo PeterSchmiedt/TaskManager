@@ -10,6 +10,11 @@ DEPENDENCIES:
   - Eureka
   - UIColor_Hex_Swift
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Eureka
+    - UIColor_Hex_Swift
+
 EXTERNAL SOURCES:
   ColorPickerRow:
     :git: https://github.com/EurekaCommunity/ColorPickerRow
@@ -26,4 +31,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5ac3b844217805377fe630356af23b34b6877ed1
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

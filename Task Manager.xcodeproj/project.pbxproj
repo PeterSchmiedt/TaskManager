@@ -170,7 +170,6 @@
 				E1440AF420A9F8B6000C7817 /* Frameworks */,
 				E1440AF520A9F8B6000C7817 /* Resources */,
 				16A554A46941CF61503C4465 /* [CP] Embed Pods Frameworks */,
-				39A4A3E9001C71E8C33B2EA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,21 +247,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39A4A3E9001C71E8C33B2EA1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B4CECCFF06013F94C63A57D5 /* [CP] Check Pods Manifest.lock */ = {
@@ -449,10 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -468,10 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7B9ZD2CW;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.peterschmiedt.Task-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
