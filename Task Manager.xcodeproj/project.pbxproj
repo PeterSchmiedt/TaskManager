@@ -132,7 +132,7 @@
 				E1440B0420A9F8B7000C7817 /* Assets.xcassets */,
 				E1440B0620A9F8B7000C7817 /* LaunchScreen.storyboard */,
 				E1440AFE20A9F8B6000C7817 /* Main.storyboard */,
-				E1440B2320B2217D000C7817 /* Collection VIew Cells */,
+				E1440B2320B2217D000C7817 /* Collection View Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -149,13 +149,13 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		E1440B2320B2217D000C7817 /* Collection VIew Cells */ = {
+		E1440B2320B2217D000C7817 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
 				E1440B2520B221D3000C7817 /* TaskCell.swift */,
 				E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */,
 			);
-			path = "Collection VIew Cells";
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
