@@ -11,8 +11,6 @@
 		C30C8DF720CC309A00F540B2 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DF620CC309A00F540B2 /* TaskCell.xib */; };
 		C30C8E0320CC32CF00F540B2 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */; };
 		C30C8E0420CC32CF00F540B2 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */; };
-		C30C8E0520CC32CF00F540B2 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */; };
-		C30C8E0620CC32CF00F540B2 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */; };
 		C30C8E0720CC32CF00F540B2 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */; };
 		C30C8E0820CC32CF00F540B2 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */; };
 		C30C8E0920CC32CF00F540B2 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */; };
@@ -20,6 +18,8 @@
 		C30C8E0B20CC32CF00F540B2 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFA20CC32B300F540B2 /* OpenSans-SemiBold.ttf */; };
 		C30C8E0C20CC32CF00F540B2 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C30C8DFF20CC32B300F540B2 /* OpenSans-SemiBoldItalic.ttf */; };
 		C30C8E0F20CC34E000F540B2 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C8E0E20CC34E000F540B2 /* BallView.swift */; };
+		C30C8E1220CC488100F540B2 /* UIFont+TaskManagerFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C8E1120CC488100F540B2 /* UIFont+TaskManagerFonts.swift */; };
+		C30C8E1420CC4BDA00F540B2 /* AppDelegate+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C8E1320CC4BDA00F540B2 /* AppDelegate+Appearance.swift */; };
 		E10D1C1C20B33D620092EBD2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */; };
 		E10D1C1F20B3678F0092EBD2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D1C1E20B3678F0092EBD2 /* NotificationService.swift */; };
 		E1440AFB20A9F8B6000C7817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440AFA20A9F8B6000C7817 /* AppDelegate.swift */; };
@@ -41,17 +41,17 @@
 		32911A27820DF090AB2C5C00 /* Pods_Task_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F8DD25AD0F899742046666 /* Pods-Task Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.release.xcconfig"; sourceTree = "<group>"; };
 		C30C8DF620CC309A00F540B2 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
-		C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		C30C8DFA20CC32B300F540B2 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		C30C8DFE20CC32B300F540B2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		C30C8DFF20CC32B300F540B2 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C30C8E0E20CC34E000F540B2 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		C30C8E1120CC488100F540B2 /* UIFont+TaskManagerFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+TaskManagerFonts.swift"; sourceTree = "<group>"; };
+		C30C8E1320CC4BDA00F540B2 /* AppDelegate+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Appearance.swift"; sourceTree = "<group>"; };
 		E10D1C1B20B33D620092EBD2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		E10D1C1E20B3678F0092EBD2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		E1440AF720A9F8B6000C7817 /* Task Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,8 +107,6 @@
 			children = (
 				C30C8DFB20CC32B300F540B2 /* OpenSans-Bold.ttf */,
 				C30C8E0220CC32B400F540B2 /* OpenSans-BoldItalic.ttf */,
-				C30C8E0020CC32B400F540B2 /* OpenSans-ExtraBold.ttf */,
-				C30C8DF920CC32B300F540B2 /* OpenSans-ExtraBoldItalic.ttf */,
 				C30C8E0120CC32B400F540B2 /* OpenSans-Italic.ttf */,
 				C30C8DFC20CC32B300F540B2 /* OpenSans-Light.ttf */,
 				C30C8DFD20CC32B300F540B2 /* OpenSans-LightItalic.ttf */,
@@ -126,6 +124,15 @@
 				C30C8E0E20CC34E000F540B2 /* BallView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C30C8E1020CC486D00F540B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C30C8E1120CC488100F540B2 /* UIFont+TaskManagerFonts.swift */,
+				C30C8E1320CC4BDA00F540B2 /* AppDelegate+Appearance.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CFB24FCFE86FD37D6F302714 /* Pods */ = {
@@ -171,6 +178,7 @@
 				C30C8E0D20CC34B700F540B2 /* Views */,
 				E1440B1A20AB458D000C7817 /* View Controllers */,
 				E1440B0F20AB2459000C7817 /* Model */,
+				C30C8E1020CC486D00F540B2 /* Utils */,
 				E1440AFA20A9F8B6000C7817 /* AppDelegate.swift */,
 				E1440B0920A9F8B7000C7817 /* Info.plist */,
 			);
@@ -276,8 +284,6 @@
 				E1440B0020A9F8B6000C7817 /* Main.storyboard in Resources */,
 				C30C8E0320CC32CF00F540B2 /* OpenSans-Bold.ttf in Resources */,
 				C30C8E0420CC32CF00F540B2 /* OpenSans-BoldItalic.ttf in Resources */,
-				C30C8E0520CC32CF00F540B2 /* OpenSans-ExtraBold.ttf in Resources */,
-				C30C8E0620CC32CF00F540B2 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				C30C8E0720CC32CF00F540B2 /* OpenSans-Italic.ttf in Resources */,
 				C30C8E0820CC32CF00F540B2 /* OpenSans-Light.ttf in Resources */,
 				C30C8E0920CC32CF00F540B2 /* OpenSans-LightItalic.ttf in Resources */,
@@ -339,7 +345,9 @@
 			files = (
 				E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */,
 				C30C8E0F20CC34E000F540B2 /* BallView.swift in Sources */,
+				C30C8E1220CC488100F540B2 /* UIFont+TaskManagerFonts.swift in Sources */,
 				E1440B1220AB24AA000C7817 /* Task.swift in Sources */,
+				C30C8E1420CC4BDA00F540B2 /* AppDelegate+Appearance.swift in Sources */,
 				E1440B1C20AB45AB000C7817 /* TasksTableViewController.swift in Sources */,
 				E1440B2220B20677000C7817 /* SettingsViewController.swift in Sources */,
 				E10D1C1F20B3678F0092EBD2 /* NotificationService.swift in Sources */,

@@ -55,7 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="gdf-n5-EiB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="1fJ-Oi-0pF">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="cLv-f6-3Qo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="cLv-f6-3Qo">
                             <connections>
                                 <action selector="done:" destination="ak7-Vl-c4O" id="bve-VN-zbd"/>
                             </connections>

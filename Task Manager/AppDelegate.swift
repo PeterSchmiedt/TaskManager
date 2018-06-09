@@ -50,6 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NotificationService.shared.setupCategory()
         
+        // Print all fonts - temporary
+        //UIFont.printAllFonts()
+        
+        // Set up appearance
+        setUpAppearance()
+        
         return true
     }
 
