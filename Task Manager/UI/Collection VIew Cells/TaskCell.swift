@@ -25,7 +25,7 @@ class TaskCell: UITableViewCell {
         taskNameLabel.text = task.name
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d.M.yyyy H:m"
+        dateFormatter.dateFormat = "d.M.yyyy HH:mm"
         taskDateLabel.text = dateFormatter.string(from: task.date)
         
         categoryColorView?.backgroundColor = task.belongsTo.color
