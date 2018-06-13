@@ -70,6 +70,13 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         let sectionInfo = sections[section]
         return sectionInfo.indexTitle == "1" ? "Completed" : "Incompleted"
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(named: "TMGrey")
+        
+        let headerView: UITableViewHeaderFooterView  = view as! UITableViewHeaderFooterView
+        headerView.textLabel?.textColor = UIColor(named: "TMYellow")
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController.sections else {
