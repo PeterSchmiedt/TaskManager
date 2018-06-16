@@ -28,6 +28,8 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             title = "New Task"
         }
         
+        tableView.backgroundColor = UIColor.clear
+        
         form +++ Section()
         <<< CheckRow() { row in
             row.tag = "isDone"
@@ -38,11 +40,12 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
                 row.updateCell()
         }
             
-        +++ Section("Task")
+        +++ TMSection("Task")
         <<< TextRow() { row in
             row.tag = "name"
             row.title = "Name"
             row.placeholder = "Enter Task Name"
+            row.placeholderColor = UIColor(named: "TMGrey40")
             row.value = task?.name
             row.add(rule: RuleRequired())
             row.validationOptions = .validatesOnChange
@@ -57,9 +60,10 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             row.title = "Description"
             row.value = task?.desc
             row.placeholder = "Description"
+            row.textAreaHeight = .dynamic(initialTextViewHeight: 70)
         }
             
-        +++ Section("Notification")
+        +++ TMSection("Notification")
         <<< DateTimeRow() { row in
             row.tag = "date"
             row.title = "Date"
@@ -75,7 +79,7 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             })
         }
         
-        +++ Section("Category")
+        +++ TMSection("Category")
         <<< PushRow<Category>() { row in
             row.tag = "category"
             row.title = "Category"

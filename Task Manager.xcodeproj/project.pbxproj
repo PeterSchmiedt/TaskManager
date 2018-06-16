@@ -35,6 +35,7 @@
 		E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2520B221D3000C7817 /* TaskCell.swift */; };
 		E1440B2820B2D96E000C7817 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2720B2D96E000C7817 /* CategoryTableViewController.swift */; };
 		E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */; };
+		E1DE3D4F20D1B6E200E06F34 /* TMSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		E1440B2520B221D3000C7817 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		E1440B2720B2D96E000C7817 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUpdateViewController.swift; sourceTree = "<group>"; };
+		E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMSection.swift; sourceTree = "<group>"; };
 		F2C7F8B0E04C1338175E1113 /* Pods-Task Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 		C30C8E0D20CC34B700F540B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1DE3D4D20D1B4A500E06F34 /* Eureka */,
 				C30C8DF520CC306100F540B2 /* Table View Cells */,
 				C30C8E0E20CC34E000F540B2 /* BallView.swift */,
 			);
@@ -216,6 +219,14 @@
 				E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E1DE3D4D20D1B4A500E06F34 /* Eureka */ = {
+			isa = PBXGroup;
+			children = (
+				E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */,
+			);
+			path = Eureka;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DE3D4F20D1B6E200E06F34 /* TMSection.swift in Sources */,
 				E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */,
 				C30C8E0F20CC34E000F540B2 /* BallView.swift in Sources */,
 				C30C8E1220CC488100F540B2 /* UIFont+TaskManagerFonts.swift in Sources */,

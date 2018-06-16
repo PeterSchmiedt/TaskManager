@@ -16,7 +16,7 @@ class SettingsViewController: FormViewController {
         super.viewDidLoad()
         
         form
-        +++ Section("Notification")
+        +++ TMSection("Notification")
         <<< SwitchRow() { row in
             row.tag = "notify"
             row.title = "Enable notifications"
@@ -31,7 +31,7 @@ class SettingsViewController: FormViewController {
                 }
             }
             
-        +++ Section("Order")
+        +++ TMSection("Order")
         <<< PushRow<String>() { row in
             row.tag = "order"
             row.title = "Order by"
@@ -43,7 +43,7 @@ class SettingsViewController: FormViewController {
             UserDefaults.standard.synchronize()
         }
         
-        +++ Section("Category")
+        +++ TMSection("Category")
         <<< ButtonRow() { (row: ButtonRow) -> Void in
             row.tag = "categoryManager"
             row.title = "Manage Categories"
