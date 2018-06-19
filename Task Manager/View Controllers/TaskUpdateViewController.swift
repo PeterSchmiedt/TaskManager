@@ -91,21 +91,11 @@ class TaskUpdateViewController: FormViewController, NSFetchedResultsControllerDe
             row.add(rule: RuleRequired())
             row.options = fetchCategories()
             }.onPresent({from, to in
-                
                 var header = HeaderFooterView<TMHeaderView>(.nibFile(name: "TMHeaderView", bundle: nil))
                 header.height = {30}
-                header.title = "YOLO"
-                //header.onSetupView
                 
-                to.view.layoutSubviews()
-                to.tableView.tableHeaderView?.backgroundColor = .black
-                //to.tableView.headerView(forSection: 0)
-                //to.form.first?.header = header
-                
-                
-                to.selectableRowCellUpdate = {cell, row in
-                    cell.backgroundColor = .orange
-                }
+                let _ = to.view //invoke viewDidLoad()
+                to.form[0].header = header
             })
     }
     

@@ -41,7 +41,13 @@ class SettingsViewController: FormViewController {
         }.onChange { row in
             UserDefaults.standard.set(row.value, forKey: "sortBy") //save
             UserDefaults.standard.synchronize()
-        }
+        }.onPresent({from, to in
+            var header = HeaderFooterView<TMHeaderView>(.nibFile(name: "TMHeaderView", bundle: nil))
+            header.height = {30}
+            
+            let _ = to.view //invoke viewDidLoad()
+            to.form[0].header = header
+        })
         
         +++ TMSection("Category")
         <<< ButtonRow() { (row: ButtonRow) -> Void in

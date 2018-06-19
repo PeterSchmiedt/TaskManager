@@ -37,7 +37,6 @@
 		E1440B2E20B3231D000C7817 /* CategoryUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */; };
 		E147F7E120D558EC00BE9CCA /* TMHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147F7E020D558EC00BE9CCA /* TMHeaderView.swift */; };
 		E147F7E520D564E400BE9CCA /* TMHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E147F7E420D564E400BE9CCA /* TMHeaderView.xib */; };
-		E147F7E820D7E45500BE9CCA /* TMPushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147F7E720D7E45500BE9CCA /* TMPushRow.swift */; };
 		E1DE3D4F20D1B6E200E06F34 /* TMSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		E1440B2D20B3231D000C7817 /* CategoryUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUpdateViewController.swift; sourceTree = "<group>"; };
 		E147F7E020D558EC00BE9CCA /* TMHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHeaderView.swift; sourceTree = "<group>"; };
 		E147F7E420D564E400BE9CCA /* TMHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TMHeaderView.xib; sourceTree = "<group>"; };
-		E147F7E720D7E45500BE9CCA /* TMPushRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMPushRow.swift; sourceTree = "<group>"; };
 		E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMSection.swift; sourceTree = "<group>"; };
 		F2C7F8B0E04C1338175E1113 /* Pods-Task Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task Manager/Pods-Task Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,7 +231,6 @@
 				E1DE3D4E20D1B6E200E06F34 /* TMSection.swift */,
 				E147F7E020D558EC00BE9CCA /* TMHeaderView.swift */,
 				E147F7E420D564E400BE9CCA /* TMHeaderView.xib */,
-				E147F7E720D7E45500BE9CCA /* TMPushRow.swift */,
 			);
 			path = Eureka;
 			sourceTree = "<group>";
@@ -377,7 +374,6 @@
 				E1440B1420AB24D3000C7817 /* Category.swift in Sources */,
 				E1440B2620B221D3000C7817 /* TaskCell.swift in Sources */,
 				E1440B2820B2D96E000C7817 /* CategoryTableViewController.swift in Sources */,
-				E147F7E820D7E45500BE9CCA /* TMPushRow.swift in Sources */,
 				E1440AFB20A9F8B6000C7817 /* AppDelegate.swift in Sources */,
 				E1440B1E20AB5276000C7817 /* TaskUpdateViewController.swift in Sources */,
 				E1440B0320A9F8B6000C7817 /* Task_Manager.xcdatamodeld in Sources */,
