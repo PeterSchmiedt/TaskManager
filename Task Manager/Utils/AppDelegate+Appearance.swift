@@ -74,7 +74,7 @@ extension AppDelegate {
         
         //General Customization - SwitchRow
         SwitchRow.defaultCellUpdate = { cell, row in
-            cell.textLabel?.textColor = row.isDisabled ? UIColor(named: "TMGrey40") : UIColor(named: "TMGrey40")
+            cell.textLabel?.textColor = row.isDisabled ? UIColor(named: "TMGrey40") : UIColor(named: "TMGrey")
             
             cell.switchControl.tintColor = UIColor(named: "TMGrey40")
             cell.switchControl.onTintColor = UIColor(named: "TMGrey40")

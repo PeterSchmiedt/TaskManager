@@ -30,7 +30,7 @@ class CategoryUpdateViewController: FormViewController, NSFetchedResultsControll
         }
         
         form
-        +++ Section()
+        +++ TMSection()
         <<< TextRow() { row in
             row.tag = "name"
             row.title = "Name"
