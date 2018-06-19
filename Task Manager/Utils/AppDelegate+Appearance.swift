@@ -36,9 +36,11 @@ extension AppDelegate {
         //General Customization - TextRow
         TextRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = UIColor(named: "TMGrey")
+            cell.textLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             
             cell.textField.textColor = UIColor(named: "TMGrey")
             cell.textField.tintColor = UIColor(named: "TMGrey40")
+            cell.textField.font = UIFont.taskManagerFont(ofSize: 17)
             
             //Placeholder color setup in Local Customization
             
@@ -49,6 +51,7 @@ extension AppDelegate {
         TextAreaRow.defaultCellUpdate = { cell, row in
             cell.textView.textColor = UIColor(named: "TMGrey")
             cell.textView.tintColor = UIColor(named: "TMGrey40")
+            cell.textView.font = UIFont.taskManagerFont(ofSize: 17)
             cell.textView.backgroundColor = UIColor.clear
             
             cell.placeholderLabel?.textColor = UIColor(named: "TMGrey40")
@@ -62,7 +65,9 @@ extension AppDelegate {
         }
         DateTimeRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = UIColor(named: "TMGrey")
+            cell.textLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             cell.detailTextLabel?.textColor = UIColor(named: "TMGrey40")
+            cell.detailTextLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             
             cell.datePicker.tintColor = UIColor(named: "TMYellow40")
             cell.datePicker.setValue(UIColor(named: "TMYellow"), forKey: "textColor")
@@ -75,6 +80,7 @@ extension AppDelegate {
         //General Customization - SwitchRow
         SwitchRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = row.isDisabled ? UIColor(named: "TMGrey40") : UIColor(named: "TMGrey")
+            cell.textLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             
             cell.switchControl.tintColor = UIColor(named: "TMGrey40")
             cell.switchControl.onTintColor = UIColor(named: "TMGrey40")
@@ -86,7 +92,9 @@ extension AppDelegate {
         //General Customization - PushRow
         PushRow<Category>.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = UIColor(named: "TMGrey")
+            cell.textLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             cell.detailTextLabel?.textColor = UIColor(named: "TMGrey40")
+            cell.detailTextLabel?.font = UIFont.taskManagerFont(ofSize: 17)
             
             //cell.backgroundColor = UIColor(named: "TMGrey")
         }
