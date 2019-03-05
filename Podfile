@@ -7,8 +7,8 @@ target 'Task Manager' do
   inhibit_all_warnings!
 
   # Pods for Task Manager
-  pod 'Eureka'
-  pod 'ColorPickerRow', :git => 'https://github.com/EurekaCommunity/ColorPickerRow'
+  pod 'Eureka', '4.1.1'
+  pod 'ColorPickerRow', :git => 'https://github.com/EurekaCommunity/ColorPickerRow', :tag => '1.2.1'
   pod 'UIColor_Hex_Swift'
 
 end

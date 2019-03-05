@@ -1,10 +1,6 @@
 //
 //  TaskCell.swift
 //  Task Manager
-//
-//  Created by Peter Schmiedt on 20/05/2018.
-//  Copyright © 2018 Peter Schmiedt. All rights reserved.
-//
 
 import UIKit
 import CoreData
@@ -58,6 +54,13 @@ class TaskCell: UITableViewCell {
         delegate?.didSetDone(task: task, done: !sender.isSelected)
     }
     
+
+    //MARK: - Restore BallView background
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+
+        categoryColorView.setNeedsLayout()
+    }
 }
 
 protocol TaskCellDelegate {

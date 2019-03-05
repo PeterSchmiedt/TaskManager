@@ -1,10 +1,6 @@
 //
 //  TMSection.swift
 //  Task Manager
-//
-//  Created by Peter Schmiedt on 13/06/2018.
-//  Copyright © 2018 Peter Schmiedt. All rights reserved.
-//
 
 import Foundation
 import UIKit
